@@ -13,7 +13,7 @@ on:
       DEVICE_TREE:
         description: 'Device Tree URL'
         required: true
-        default: 'https://github.com/twrpdtgen/android_device_samsung_a10'
+        default: 'https://github.com/kho447520-jpg/android_device_samsung_a10'
       DEVICE_TREE_BRANCH:
         description: 'Device Tree Branch'
         required: true
@@ -26,6 +26,10 @@ on:
         description: 'Device Codename'
         required: true
         default: 'a10'
+      DEVICE_MAKEFILE:
+        description: 'Device Makefile'
+        required: true
+        default: 'fox_a10.mk'
       BUILD_TARGET:
         description: 'Build Target'
         required: true
@@ -93,7 +97,7 @@ jobs:
         export ALLOW_MISSING_DEPENDENCIES=true
         export FOX_BUILD_DEVICE=${{ github.event.inputs.DEVICE_NAME }}
         export LC_ALL="C"
-        lunch twrp_${{ github.event.inputs.DEVICE_NAME }}-eng
+        lunch fox_${{ github.event.inputs.DEVICE_NAME }}-eng
         make clean
         mka adbd ${{ github.event.inputs.BUILD_TARGET }}image
         set -e
