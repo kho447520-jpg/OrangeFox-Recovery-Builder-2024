@@ -17,7 +17,7 @@ on:
       DEVICE_TREE_BRANCH:
         description: 'Device Tree Branch'
         required: true
-        default: 'main'
+        default: 'a10dd-user-11-RP1A.200720.012-A105FDDS9CWD2-release-keys'
       DEVICE_PATH:
         description: 'Device Path'
         required: true
